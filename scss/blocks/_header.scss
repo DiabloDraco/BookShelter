@@ -1,0 +1,65 @@
+.header {
+    &__container {
+        padding-left: 25px;
+        padding-top: 11px;
+        padding-bottom: 10px;
+        padding-right: 40px;
+        display: flex;
+        align-items: center;
+    }
+    
+    &__logo {
+        max-width: 226px;
+        width: 100%;
+        height: 44px;
+        margin-right: 56px;
+    }
+    
+    &__input-wrapper {
+        display: flex;
+        max-width: 670px;
+        align-items: center;
+        width: 100%;
+        margin-right: 219px;
+    }
+    
+    &__input {
+        border: none;
+        background: #F8FAFD;
+        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+        border-radius: 30px;
+        font-family: 'Rubik';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 15px;
+        color: rgba(0, 0, 0, 0.24);        
+        padding: 17px 0 17.42px 48px;
+        width: 100%;
+        position: relative;
+    }
+    
+    &__input-label {
+        position: absolute;
+        margin-left: 16px;
+    }
+    
+    &__input-img {
+        width: 19px;
+        height: 18.27px;
+        object-fit: contain;
+    }
+    
+    &__mode-btn {
+        display: flex;
+        border: none;
+        background: none;
+    }
+    
+    &__mode-sun {
+    }
+    
+    &__mode-moon {
+        display: none;
+    }
+}

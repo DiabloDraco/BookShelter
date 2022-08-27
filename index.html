@@ -4,12 +4,26 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="./images/bookshelf.svg" type="image/x-icon">
 	<link rel="stylesheet" href="./css/main.css">
-	<title></title>
+	<title>BookShelter</title>
 </head>
 <body>
 	<header class="header">
-		<div class="container">
+		<div class="container header__container">
+			<a class="header__logo" href="#">
+				<img src="./images/logo.svg" alt="logo" width="226" height="44">
+			</a>
+			<div class="header__input-wrapper">
+				<input id="input" class="header__input" type="text" placeholder="Search books">
+				<label class="header__input-label" for="input">
+					<img class="header__input-img" src="./images/lupa.svg" alt="" width="19" height="18.27">
+				</label> 
+			</div>
+			<button class="header__mode-btn">
+				<img class="header__mode-sun" src="./images/sun.svg" alt="sun" width="23" height="23">
+				<img class="header__mode-moon" src="./images/moon.svg" alt="moon" width="23" height="23">
+			</button>
 		</div>
 	</header>
 	
@@ -24,5 +38,6 @@
 		<div class="container">
 		</div>
 	</footer>
+	<script src="./js/main.js"></script>
 </body>
 </html>
