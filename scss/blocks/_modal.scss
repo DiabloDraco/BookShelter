@@ -1,0 +1,64 @@
+.modal {
+    max-width: 552.47px;
+    width: 100%;
+    &__heading-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #F8FAFD;
+        padding: 22.78px 35.29px 22.78px 33.03px;
+    }
+    
+    &__heading {
+        font-family: 'Rubik';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+        color: #222531;        
+    }
+    
+    &__cross {
+        border: none;
+        background: none;
+    }
+    
+    &__middle {
+        padding: 44.43px 35.31px 0 46.7px;
+    }
+    
+    &__middle-img {
+        border-radius: 5px;
+        object-fit: contain;
+        margin-bottom: 51.26px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    &__middle-info {
+        font-family: 'Rubik';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 170.3%;
+        color: #58667E;
+    }
+    
+    &__bottom {
+    }
+    
+    &__auth-wrapper {
+    }
+    
+    &__auth {
+    }
+    
+    &__atrib-wrapper {
+    }
+    
+    &__bottom-atrib {
+    }
+    
+    &__read-btn {
+    }
+}
