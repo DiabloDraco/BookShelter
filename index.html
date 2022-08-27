@@ -5,7 +5,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="./images/bookshelf.svg" type="image/x-icon">
-	<link rel="stylesheet" href="./css/style.css">
 	<link rel="stylesheet" href="./css/main.css">
 	<title>BookShelter</title>
 </head>
@@ -215,6 +214,29 @@
 		</div>
 	</div>
 	</main>
+	<template id="bookTem">
+		<li class="books__item">
+			<div class="books__item-top">
+				<img class="books__top-img" src="./images/Python.png" alt="book" width="201" height="202">
+			</div>
+			<div class="books__item-bottom">
+				<h3 class="books__item-heading">Python</h3>
+				<p class="books__item-auth">David M. Beazley</p>
+				<p class="books__item-year">2009</p>
+				<div class="books__buttons-wrapper">
+					<button class="books__bookmark-btn">
+						Bookmark
+					</button>
+					<button class="books__info-btn">
+						More Info
+					</button>
+				</div>
+				<button class="books__read-btn">
+					Read
+				</button>
+			</div>
+		</li>
+	</template>
 	<script src="./js/main.js"></script>
 </body>
 </html>
