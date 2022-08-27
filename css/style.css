@@ -1,0 +1,120 @@
+.modal__wrapper {
+    display: none;
+    position: absolute;
+    top: 0; 
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 2001px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+    margin-left: auto;
+    max-width: 552.47px;
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+}
+.modal__heading-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #F8FAFD;
+    padding: 22.78px 35.29px 22.78px 33.03px;
+}
+
+.modal__heading {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    color: #222531;        
+}
+
+.modal__cross {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.modal__middle {
+    padding: 44.43px 35.31px 0 46.7px;
+}
+
+.modal__middle-img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    object-fit: contain;
+    margin-bottom: 51.26px;
+}
+
+.modal__middle-info {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 170.3%;
+    color: #58667E;
+}
+
+.modal__bottom {    
+    padding: 33.43px 35.31px 70px 47px;
+}
+
+.modal__auth-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 17px;
+}
+
+.modal__auth {
+    display: flex;
+    align-items: center;
+}
+
+.modal__atrib-wrapper {
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+    gap: 7px;
+}
+
+.modal__bottom-atrib {
+    padding: 6px 13.58px 4.25px 13.59px;
+    background: rgba(13, 117, 255, 0.09);
+    border-radius: 30px;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #0D75FF;
+    cursor: pointer;
+}
+
+.modal__end {
+    display: flex;
+    justify-content: end;
+    padding: 14.61px 20.47px 16.46px 0;
+    background: #F8FAFD;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.modal__read-btn {
+    border: none;
+    background: #75828A;
+    border-radius: 4px;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    padding: 9px 38px 9px 39px;
+    cursor: pointer;
+}
