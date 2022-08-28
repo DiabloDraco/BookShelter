@@ -1072,6 +1072,7 @@ align-items: center;
 
 .modal__wrapper {
     display: flex;
+    width: 0;
     transform: translateX(100%);
     transition: 1s all ease;
     position: absolute;
@@ -1086,7 +1087,7 @@ align-items: center;
 .modal {
     margin-left: auto;
     max-width: 552.47px;
-    width: 0;
+    width: 100%;
     background: #FFFFFF;
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
 }
@@ -1261,4 +1262,6 @@ align-items: center;
 .active .logo__day {
     display: none;
 }
+.active .modal__wrapper {
+    width: 100%;
 }
