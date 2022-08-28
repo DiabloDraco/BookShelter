@@ -718,7 +718,15 @@ h1, h2, h3, h4, h5, h6, p {
     padding-bottom: 25px;
 }
 
-.active .modal__heading-wrapper  , .modal__end , .modal {
+.active .modal {
+    background: #171f36;
+}
+
+.active .modal__end  {
+    background: #171f36;
+}
+
+.active .modal__heading-wrapper {
     background: #171f36;
 }
 
