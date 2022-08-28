@@ -1,3 +1,5 @@
+// VARIABLES
+
 let elInput = document.querySelector(".header__input")
 let elTemplate = document.querySelector("#bookTem").content
 let elWrapper = document.querySelector(".books__list")
@@ -29,6 +31,8 @@ elForm.addEventListener("submit" , function (evt) {
     }
 })
 
+// BOOKS RENDER
+
 function render(array) {
     if (array) {
         elWrapper.innerHTML = null
@@ -56,6 +60,8 @@ function render(array) {
 }
 
 
+// BOOKMARK RENDER
+
 function bookmarkRender(array) {
     elBookmarkWrapper.innerHTML = null
     let fragment = document.createDocumentFragment()
@@ -78,6 +84,9 @@ function bookmarkRender(array) {
     }
     elBookmarkWrapper.appendChild(fragment)
 }
+
+
+// MODAL RENDER 
 
 elWrapper.addEventListener("click" , function (evt) {
     let current = evt.target.dataset 
@@ -170,6 +179,9 @@ elWrapper.addEventListener("click" , function (evt) {
     }
 })
 
+// ORDER BOOKS
+
+
 let elOrder = document.querySelector(".result__btn")
 
 elOrder.addEventListener("click" , function () {
@@ -182,6 +194,8 @@ elOrder.addEventListener("click" , function () {
         })
     }
 })
+
+// DELETE BOOKS
 
 elBookmarkWrapper.addEventListener("click" , function (evt) {
     let current = evt.target.dataset.deleteId
@@ -198,6 +212,8 @@ elBookmarkWrapper.addEventListener("click" , function (evt) {
         localStorage.setItem("saved" , JSON.stringify(saved))
     }
 })
+
+// DARK MODE
 
 let elMode = document.querySelector(".header__mode-btn")
 
