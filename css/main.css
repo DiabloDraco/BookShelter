@@ -787,6 +787,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     margin: 0;
 }
 .header__input {
@@ -801,7 +802,6 @@ main {
     line-height: 15px;
     color: rgba(0, 0, 0, 0.24);
     padding: 17px 0 17.42px 48px;
-    position: relative;
 }
 .header__input:focus {
     color: rgba(0, 0, 0, 1);
@@ -814,7 +814,7 @@ main {
     cursor: pointer;
     margin-left: 0;
     position: absolute;
-    left: 35px;
+    left: 10px;
 }
 .header__input-img {
     width: 19px;
@@ -977,9 +977,11 @@ align-items: center;
 
 .books__list {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     gap: 33px;
-    padding-left: 39px;
+    padding-left: 0px;
     margin-top: 40px;
 }
 .books__item {
@@ -1077,7 +1079,7 @@ align-items: center;
 }
 
 .modal__wrapper {
-    display: flex;
+    display: none;
     transform: translateX(100%);
     transition: 1s all ease;
     position: absolute;
@@ -1133,7 +1135,7 @@ align-items: center;
     margin-bottom: 51.26px;
 }
 .modal__second {
-    height: 90%;
+    height: 75%;
     overflow-y: scroll;
 }
 .modal__middle-info {

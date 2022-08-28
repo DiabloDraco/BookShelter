@@ -82,6 +82,7 @@ function bookmarkRender(array) {
 elWrapper.addEventListener("click" , function (evt) {
     let current = evt.target.dataset 
     if (current.infoId) {
+        document.querySelector(".modal__wrapper").style.display = "flex"
         document.querySelector(".modal__wrapper").style.transform = "translateX(0)"
         document.querySelector("html").style.overflowY = "hidden"
         document.querySelector("body").style.overflowY = "hidden"
