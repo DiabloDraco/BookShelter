@@ -48,24 +48,7 @@
 						</p>
 					</div>
 					<ul class="bookmarks__list"> 
-						<li class="bookmarks__item">
-							<div class="bookmarks__item-left">
-								<h3 class="bookmarks__left-heading">
-									Python
-								</h3>
-								<p class="bookmarks__left-auth">
-									David M. Beazley
-								</p>
-							</div>
-							<div class="bookmarks__btn-wrapper">
-								<button class="bookmarks__bookmark-btn">
-									<img class="bookmarks__bookmark-icon" src="./images/bookmark.svg" alt="" width="24" height="24">
-								</button>
-								<button class="bookmarks__delete-btn">
-									<img class="bookmarks__delete-icon" src="./images/delete.svg" alt="" width="24" height="24">
-								</button>
-							</div>
-						</li>
+
 					</ul>
 				</div>
 			</section>
@@ -84,49 +67,52 @@
 						<img src="./images/cross.svg" alt="cross" width="14.83" height="14.85">
 					</button>
 				</div>
-				<div class="modal__middle">
-					<img class="modal__middle-img" src="./images/pythonca.png" alt="book" width="228.96" height="299.59">
-					<p class="modal__middle-info">
-						Culpa nulla pariatur cupidatat nisi incididunt ea do ipsum. Incididunt quis mollit elit commodo cillum eiusmod reprehenderit labore irure. Cillum et incididunt et nostrud exercitation quis aute laboris non ut adipisicing. Laboris ad minim aute nulla proident deserunt velit anim sunt aliquip ut sit. Exercitation aliquip ullamco officia non aliqua. Sint deserunt aliquip veniam id eiusmod sit consectetur mollit ea aliqua officia consequat. Magna non mollit nisi est commodo voluptate aute id. Deserunt nostrud id do in nisi mollit deserunt non. Pariatur fugiat cillum irure elit sint nisi ad ipsum culpa deserunt cupidatat esse consequat laboris. Id aliquip non consectetur esse proident duis Lorem.
-					</p>
-				</div>
-				<div class="modal__bottom">
-					<div class="modal__auth-wrapper">
-						<p class="modal__auth">Author :</p> 
-						<div class="modal__atrib-wrapper">
-							<span class="modal__bottom-atrib">Jamal Kasper</span> 
-							<span class="modal__bottom-atrib">Author 2</span>
+				<div class="modal__second">
+					<div class="modal__middle">
+						<img class="modal__middle-img" src="./images/pythonca.png" alt="book" width="228.96" height="299.59">
+						<p class="modal__middle-info">
+							Culpa nulla pariatur cupidatat nisi incididunt ea do ipsum. Incididunt quis mollit elit commodo cillum eiusmod reprehenderit labore irure. Cillum et incididunt et nostrud exercitation quis aute laboris non ut adipisicing. Laboris ad minim aute nulla proident deserunt velit anim sunt aliquip ut sit. Exercitation aliquip ullamco officia non aliqua. Sint deserunt aliquip veniam id eiusmod sit consectetur mollit ea aliqua officia consequat. Magna non mollit nisi est commodo voluptate aute id. Deserunt nostrud id do in nisi mollit deserunt non. Pariatur fugiat cillum irure elit sint nisi ad ipsum culpa deserunt cupidatat esse consequat laboris. Id aliquip non consectetur esse proident duis Lorem.
+						</p>
+					</div>
+					
+					<div class="modal__bottom">
+						<div class="modal__auth-wrapper">
+							<p class="modal__auth">Author:</p> 
+							<div class="modal__atrib-wrapper author">
+								<span class="modal__bottom-atrib">Jamal Kasper</span> 
+								<span class="modal__bottom-atrib">Author 2</span>
+							</div>
+						</div>
+						<div class="modal__auth-wrapper">
+							<p class="modal__auth">Published:</p> 
+							<div class="modal__atrib-wrapper year">
+								<span class="modal__bottom-atrib">2019</span> 
+							</div>
+						</div>
+						<div class="modal__auth-wrapper">
+							<p class="modal__auth">Publishers:</p> 
+							<div class="modal__atrib-wrapper publisher">
+								<span class="modal__bottom-atrib">Hollman</span> 
+							</div>
+						</div>
+						<div class="modal__auth-wrapper">
+							<p class="modal__auth">Categories:</p> 
+							<div class="modal__atrib-wrapper catergories">
+								<span class="modal__bottom-atrib">Computers</span> 
+							</div>
+						</div>
+						<div class="modal__auth-wrapper">
+							<p class="modal__auth">Pages Count:</p> 
+							<div class="modal__atrib-wrapper page">
+								<span class="modal__bottom-atrib">346</span> 
+							</div>
 						</div>
 					</div>
-					<div class="modal__auth-wrapper">
-						<p class="modal__auth">Published :</p> 
-						<div class="modal__atrib-wrapper">
-							<span class="modal__bottom-atrib">2019</span> 
-						</div>
+					<div class="modal__end">
+						<a target="_blank" class="modal__read-btn">
+							Read
+						</a>
 					</div>
-					<div class="modal__auth-wrapper">
-						<p class="modal__auth">Publishers:</p> 
-						<div class="modal__atrib-wrapper">
-							<span class="modal__bottom-atrib">Hollman</span> 
-						</div>
-					</div>
-					<div class="modal__auth-wrapper">
-						<p class="modal__auth">Categories:</p> 
-						<div class="modal__atrib-wrapper">
-							<span class="modal__bottom-atrib">Computers</span> 
-						</div>
-					</div>
-					<div class="modal__auth-wrapper">
-						<p class="modal__auth">Pages Count:</p> 
-						<div class="modal__atrib-wrapper">
-							<span class="modal__bottom-atrib">346</span> 
-						</div>
-					</div>
-				</div>
-				<div class="modal__end">
-					<button class="modal__read-btn">
-						Read
-					</button>
 				</div>
 			</div>
 		</div>
@@ -152,6 +138,26 @@
 					Read
 				</a>
 				
+			</div>
+		</li>
+	</template>
+	<template id="bookmarkTem">
+		<li class="bookmarks__item">
+			<div class="bookmarks__item-left">
+				<h3 class="bookmarks__left-heading">
+					Python
+				</h3>
+				<p class="bookmarks__left-auth">
+					David M. Beazley
+				</p>
+			</div>
+			<div class="bookmarks__btn-wrapper">
+				<a class="bookmarks__bookmark-btn">
+					<img class="bookmarks__bookmark-icon" src="./images/bookmark.svg" alt="" width="24" height="24">
+				</a>
+				<button class="bookmarks__delete-btn">
+					<img class="bookmarks__delete-icon" src="./images/delete.svg" alt="" width="24" height="24">
+				</button>
 			</div>
 		</li>
 	</template>
