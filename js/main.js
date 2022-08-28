@@ -7,6 +7,8 @@ let elResult = document.querySelector(".result__num")
 let elForm = document.querySelector(".header__input-wrapper")
 let elBookmarkTemplate = document.querySelector("#bookmarkTem").content
 let elBookmarkWrapper = document.querySelector(".bookmarks__list")
+let elMode = document.querySelector(".header__mode-btn")
+let elOrder = document.querySelector(".result__btn")
 let localSaved = JSON.parse(localStorage.getItem("saved"))
 let saved = []
 
@@ -181,9 +183,6 @@ elWrapper.addEventListener("click" , function (evt) {
 
 // ORDER BOOKS
 
-
-let elOrder = document.querySelector(".result__btn")
-
 elOrder.addEventListener("click" , function () {
     if (elInput.value.length > 1) {
         fetch(`https://www.googleapis.com/books/v1/volumes?q=${elInput.value}&orderBy=newest`)
@@ -214,8 +213,6 @@ elBookmarkWrapper.addEventListener("click" , function (evt) {
 })
 
 // DARK MODE
-
-let elMode = document.querySelector(".header__mode-btn")
 
 elMode.addEventListener("click" , function () {
    let body = document.querySelector(".body")
