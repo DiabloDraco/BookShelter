@@ -10,6 +10,10 @@ let elBookmarkWrapper = document.querySelector(".bookmarks__list")
 let elMode = document.querySelector(".header__mode-btn")
 let elOrder = document.querySelector(".result__btn")
 let localSaved = JSON.parse(localStorage.getItem("saved"))
+let elPagenationWrapper = document.querySelector(".pagenation")
+let elBtnTem = document.querySelector("#pageBtn").content
+
+
 let saved = []
 
 if (localSaved) {
@@ -24,10 +28,11 @@ elForm.addEventListener("submit" , function (evt) {
     evt.preventDefault()
     
     if (elInput.value.length > 1) {
-        fetch(`https://www.googleapis.com/books/v1/volumes?q=${elInput.value}`)
+        fetch(`https://www.googleapis.com/books/v1/volumes?q=${elInput.value}&maxResults=12&startIndex=1`)
         .then(req => req.json())
         .then(data => {
             render(data.items)
+            renderBtn(data.totalItems)
             elResult.textContent = data.totalItems
         })
     }
@@ -185,10 +190,11 @@ elWrapper.addEventListener("click" , function (evt) {
 
 elOrder.addEventListener("click" , function () {
     if (elInput.value.length > 1) {
-        fetch(`https://www.googleapis.com/books/v1/volumes?q=${elInput.value}&orderBy=newest`)
+        fetch(`https://www.googleapis.com/books/v1/volumes?q=${elInput.value}&maxResults=12&startIndex=1`)
         .then(req => req.json())
         .then(data => {
             render(data.items)
+            renderBtn(data.totalItems)
             elResult.textContent = data.totalItems
         })
     }
@@ -218,3 +224,19 @@ elMode.addEventListener("click" , function () {
    let body = document.querySelector(".body")
    body.classList.toggle("active")
 })
+
+function renderBtn(number) {
+    elPagenationWrapper.innerHTML = null
+    if (number/12 > 1) {
+        let fragment = document.createDocumentFragment() 
+        for (let i = 1; i <= number/12; i++) {
+            let template = elBtnTem.cloneNode(true)
+            
+            template.querySelector(".pagenation__item").textContent = i
+            template.querySelector(".pagenation__item").dataset.pageId = i
+            
+            fragment.appendChild(template)
+        }
+        elPagenationWrapper.appendChild(fragment)
+    }
+}
