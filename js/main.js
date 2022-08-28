@@ -6,7 +6,7 @@ let elForm = document.querySelector(".header__input-wrapper")
 let elBookmarkTemplate = document.querySelector("#bookmarkTem").content
 let elBookmarkWrapper = document.querySelector(".bookmarks__list")
 let localSaved = JSON.parse(localStorage.getItem("saved"))
-let saved 
+let saved = []
 
 if (localSaved) {
     saved = localSaved
@@ -65,10 +65,11 @@ function bookmarkRender(array) {
             template.querySelector(".bookmarks__left-auth").textContent = array[i].volumeInfo.authors[0]
         }
         if (array[i].accessInfo.webReaderLink) {
-            template.querySelector(".bookmarks__bookmark-btn").src = array[i].accessInfo.webReaderLink
+            template.querySelector(".bookmarks__bookmark-btn").href = array[i].accessInfo.webReaderLink
         }
         template.querySelector(".bookmarks__delete-btn").dataset.deleteId = array[i].id
-        
+        template.querySelector(".bookmarks__item").classList.add(`del${array[i].id}`)
+        template.querySelector(".bookmarks__delete-icon").dataset.deleteId = array[i].id
         fragment.appendChild(template)
     }
     elBookmarkWrapper.appendChild(fragment)
@@ -173,4 +174,20 @@ elOrder.addEventListener("click" , function () {
         render(data.items)
         elResult.textContent = data.totalItems
     })
+})
+
+elBookmarkWrapper.addEventListener("click" , function (evt) {
+    let current = evt.target.dataset.deleteId
+
+    if (current) {
+        let elDel = document.querySelector(`.del${current}`)
+        elDel.remove()
+        let index = saved.indexOf(
+            saved.find(function (item) {
+                return item.id == current
+            })
+        )
+        saved.splice(index , 1)
+        localStorage.setItem("saved" , JSON.stringify(saved))
+    }
 })
