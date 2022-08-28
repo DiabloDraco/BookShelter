@@ -28,7 +28,7 @@ elForm.addEventListener("submit" , function (evt) {
     evt.preventDefault()
     
     if (elInput.value.length > 1) {
-        fetch(`https://www.googleapis.com/books/v1/volumes?q=${elInput.value}&maxResults=12&startIndex=1`)
+        fetch(`https://www.googleapis.com/books/v1/volumes?q=${elInput.value}&maxResults=12&startIndex=0`)
         .then(req => req.json())
         .then(data => {
             render(data.items)
@@ -225,11 +225,14 @@ elMode.addEventListener("click" , function () {
    body.classList.toggle("active")
 })
 
+// PAGENATION
+
 function renderBtn(number) {
     elPagenationWrapper.innerHTML = null
-    if (number/12 > 1) {
+    let pagenums = number/12
+    if (pagenums > 1) {
         let fragment = document.createDocumentFragment() 
-        for (let i = 1; i <= number/12; i++) {
+        for (let i = 1; i <= pagenums; i++) {
             let template = elBtnTem.cloneNode(true)
             
             template.querySelector(".pagenation__item").textContent = i
@@ -240,3 +243,17 @@ function renderBtn(number) {
         elPagenationWrapper.appendChild(fragment)
     }
 }
+
+elPagenationWrapper.addEventListener("click" , function (evt) {
+    let current = evt.target.dataset
+    let currentPage = current.pageId
+    let pageIndex = currentPage * 12
+    if (current.pageId) {
+        fetch(`https://www.googleapis.com/books/v1/volumes?q=${elInput.value}&maxResults=12&startIndex=${pageIndex}`)
+        .then(req => req.json())
+        .then(data => {
+            render(data.items)
+            elResult.textContent = data.totalItems
+        })
+    }
+})
