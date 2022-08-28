@@ -801,7 +801,7 @@ main {
     font-size: 13px;
     line-height: 15px;
     color: rgba(0, 0, 0, 0.24);
-    padding: 17px 0 17.42px 48px;
+    padding: 17px 0 17.42px 52px;
 }
 .header__input:focus {
     color: rgba(0, 0, 0, 1);
