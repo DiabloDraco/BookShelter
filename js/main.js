@@ -249,12 +249,11 @@ elBookmarkWrapper.addEventListener("click" , function (evt) {
         let current = evt.target.dataset
         let currentPage = current.pageId
         let pageIndex = currentPage * 12
-        if (document.querySelector(".activepage")) {
-            document.querySelector(".activepage").classList.remove("activepage")
-        }
-        document.querySelector(`.page${currentPage}`).classList.add("activepage")
-        
         if (current.pageId) {
+            if (document.querySelector(".activepage")) {
+                document.querySelector(".activepage").classList.remove("activepage")
+            }
+            document.querySelector(`.page${currentPage}`).classList.add("activepage")
             fetch(`https://www.googleapis.com/books/v1/volumes?q=${elInput.value}&maxResults=12&startIndex=${pageIndex}`)
             .then(req => req.json())
             .then(data => {
