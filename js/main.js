@@ -204,7 +204,7 @@ elOrder.addEventListener("click" , function () {
 
 elBookmarkWrapper.addEventListener("click" , function (evt) {
     let current = evt.target.dataset.deleteId
-
+    
     if (current) {
         let elDel = document.querySelector(`.del${current}`)
         elDel.remove()
@@ -212,48 +212,54 @@ elBookmarkWrapper.addEventListener("click" , function (evt) {
             saved.find(function (item) {
                 return item.id == current
             })
-        )
-        saved.splice(index , 1)
-        localStorage.setItem("saved" , JSON.stringify(saved))
-    }
-})
-
-// DARK MODE
-
-elMode.addEventListener("click" , function () {
-   let body = document.querySelector(".body")
-   body.classList.toggle("active")
-})
-
-// PAGENATION
-
-function renderBtn(number) {
-    elPagenationWrapper.innerHTML = null
-    let pagenums = number/12
-    if (pagenums > 1) {
-        let fragment = document.createDocumentFragment() 
-        for (let i = 1; i <= pagenums; i++) {
-            let template = elBtnTem.cloneNode(true)
-            
-            template.querySelector(".pagenation__item").textContent = i
-            template.querySelector(".pagenation__item").dataset.pageId = i
-            
-            fragment.appendChild(template)
+            )
+            saved.splice(index , 1)
+            localStorage.setItem("saved" , JSON.stringify(saved))
         }
-        elPagenationWrapper.appendChild(fragment)
+    })
+    
+    // DARK MODE
+    
+    elMode.addEventListener("click" , function () {
+        let body = document.querySelector(".body")
+        body.classList.toggle("active")
+    })
+    
+    // PAGENATION
+    
+    function renderBtn(number) {
+        elPagenationWrapper.innerHTML = null
+        let pagenums = number/12
+        if (pagenums > 1) {
+            let fragment = document.createDocumentFragment() 
+            for (let i = 1; i <= pagenums; i++) {
+                let template = elBtnTem.cloneNode(true)
+                
+                template.querySelector(".pagenation__item").textContent = i
+                template.querySelector(".pagenation__item").dataset.pageId = i
+                template.querySelector(".pagenation__item").classList.add(`page${i}`)
+                
+                fragment.appendChild(template)
+            }
+            elPagenationWrapper.appendChild(fragment)
+        }
     }
-}
-
-elPagenationWrapper.addEventListener("click" , function (evt) {
-    let current = evt.target.dataset
-    let currentPage = current.pageId
-    let pageIndex = currentPage * 12
-    if (current.pageId) {
-        fetch(`https://www.googleapis.com/books/v1/volumes?q=${elInput.value}&maxResults=12&startIndex=${pageIndex}`)
-        .then(req => req.json())
-        .then(data => {
-            render(data.items)
-            elResult.textContent = data.totalItems
-        })
-    }
-})
+    
+    elPagenationWrapper.addEventListener("click" , function (evt) {
+        let current = evt.target.dataset
+        let currentPage = current.pageId
+        let pageIndex = currentPage * 12
+        if (document.querySelector(".activepage")) {
+            document.querySelector(".activepage").classList.remove("activepage")
+        }
+        document.querySelector(`.page${currentPage}`).classList.add("activepage")
+        
+        if (current.pageId) {
+            fetch(`https://www.googleapis.com/books/v1/volumes?q=${elInput.value}&maxResults=12&startIndex=${pageIndex}`)
+            .then(req => req.json())
+            .then(data => {
+                render(data.items)
+                elResult.textContent = data.totalItems
+            })
+        }
+    })

@@ -723,6 +723,11 @@ h1, h2, h3, h4, h5, h6, p {
     color: #FFFFFF;
 }
 
+.activepage {
+    background-color: #75828A;
+    color: #FFFFFF; 
+}
+
 /* DARK MODE STYLES */
 
 
