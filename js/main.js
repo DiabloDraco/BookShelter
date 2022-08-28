@@ -197,3 +197,10 @@ elBookmarkWrapper.addEventListener("click" , function (evt) {
         localStorage.setItem("saved" , JSON.stringify(saved))
     }
 })
+
+let elMode = document.querySelector(".header__mode-btn")
+
+elMode.addEventListener("click" , function () {
+   let body = document.querySelector(".body")
+   body.classList.toggle("active")
+})
